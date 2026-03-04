@@ -43,7 +43,7 @@ public class JdbcUserDao implements UserDao {
     @Override
     public User getUserById(int id) {
 
-        String sql = "SELECT * FROM user WHERE user_id = ?";
+        String sql = "SELECT * FROM user  WHERE user_id = ?";
         User user = null;
         try(Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)) {

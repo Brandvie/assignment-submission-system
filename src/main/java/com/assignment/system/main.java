@@ -68,10 +68,10 @@ public class main {
         }
 
 
-        private static void findUsersById() {
-            System.out.print("\nEnter user ID to find: ");
+        private static void findUsersById () {
+            System.out.print("\n Enter user ID to find: ");
             int id = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
 
             User s = userDao.getUserById(id);
             if (s != null) {
