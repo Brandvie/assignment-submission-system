@@ -26,7 +26,7 @@ public class JdbcUserDao implements UserDao {
                         rs.getInt("user_id"),
                         rs.getString("name"),
                         rs.getString("email"),
-                        rs.getDouble("gpa"),
+                        rs.getDouble("reputation_score"),
                         rs.getInt("age")
                 );
 
@@ -58,7 +58,7 @@ public class JdbcUserDao implements UserDao {
                         rs.getInt("user_id"),
                         rs.getString("name"),
                         rs.getString("email"),
-                        rs.getDouble("gpa"),
+                        rs.getDouble("reputation_score"),
                         rs.getInt("age")
                 );
 
