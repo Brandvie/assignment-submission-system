@@ -9,6 +9,6 @@ public interface StudentDao {
 
     List<Student> getAllStudents();
 
-    Optional<Student> getStudentById(int id);
+   Student getStudentById(int id);
 
 }
