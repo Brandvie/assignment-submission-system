@@ -2,32 +2,28 @@ package com.assignment.system;
 
 import java.util.List;
 import java.util.Scanner;
-import com.assignment.system.dao.StudentDao;
-import com.assignment.system.dao.jdbc.JdbcStudentDao;
-import com.assignment.system.dto.Student;
+import com.assignment.system.dao.UserDao;
+import com.assignment.system.dao.jdbc.JdbcUserDao;
+import com.assignment.system.dto.User;
 
-import com.assignment.system.util.DatabaseConnection;
-
-import java.util.List;
-import java.util.Scanner;
 public class main {
 
 
 
 
-        private static final StudentDao studentDao= new JdbcStudentDao();
+        private static final UserDao userDao= new JdbcUserDao();
         private static final Scanner scanner = new Scanner(System.in);
 
         public static void main(String[] args) {
             boolean running = true;
 
             while (running) {
-                System.out.println("\nAssignment-Submission-system");
-                System.out.println("1. List all student");
-                System.out.println("2. Find student by ID");
-                System.out.println("3. Delete student");
-                System.out.println("4. Add student");
-                System.out.println("5. Update student");
+                System.out.println("\nCollege-system");
+                System.out.println("1. List all users");
+                System.out.println("2. Find user by ID");
+                System.out.println("3. Delete user");
+                System.out.println("4. Add user");
+                System.out.println("5. Update user");
                 System.out.println("6. Filter with Predicate");
                 System.out.println("7. JSON Conversion");
                 System.out.println("8. Architecture Diagram");
@@ -39,10 +35,10 @@ public class main {
 
                     switch (choice) {
                         case 1:
-                            listAllStudents();
+                            listAllUsers();
                             break;
                         case 2:
-                            findStudentsById();
+                            findUsersById();
                             break;
 
                         case 9:
@@ -62,24 +58,24 @@ public class main {
         }
 
 
-        private static void listAllStudents() {
-            System.out.println("\nAll Students:");
-            List<Student> students = studentDao.getAllStudents();
-            for (Student student : students) {
-                System.out.println(student);
+        private static void listAllUsers() {
+            System.out.println("\nAll Users:");
+            List<User> users = userDao.getAllUsers();
+            for (User user : users) {
+                System.out.println(user);
             }
         }
 
-        private static void findStudentsById() {
-            System.out.print("\nEnter student ID to find: ");
+        private static void findUsersById() {
+            System.out.print("\nEnter user ID to find: ");
             int id = scanner.nextInt();
             scanner.nextLine(); // consume newline
 
-            Student s = studentDao.getStudentById(id);
+            User s = userDao.getUserById(id);
             if (s != null) {
-                System.out.println("student found: " + s);
+                System.out.println("user found: " + s);
             } else {
-                System.out.println("student with ID " + id + " not found.");
+                System.out.println("user with ID " + id + " not found.");
             }
 
         }

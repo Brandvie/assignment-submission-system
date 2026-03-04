@@ -1,28 +1,28 @@
 package com.assignment.system.dto;
 
-public class Student {
+public class User {
 
-    private int studentId;
+    private int userId;
     private String name;
     private String email;
     private double gpa;
     private int age;
 
-    public Student(int studentId, String name, String email, double gpa, int age) {
-        setStudentId(studentId);
+    public User(int userId, String name, String email, double gpa, int age) {
+        setUserId(userId);
         setName(name);
         setEmail(email);
         setGpa(gpa);
         setAge(age);
     }
 
-    public int getStudentId() {
-        return studentId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setStudentId(int studentId) {
-        if(studentId < 0) throw new IllegalArgumentException("Invalid id");
-        this.studentId = studentId;
+    public void setUserId(int userId) {
+        if(userId < 0) throw new IllegalArgumentException("Invalid id");
+        this.userId = userId;
     }
 
     public String getName() {
@@ -73,8 +73,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + studentId +
+        return "User{" +
+                "id=" + userId +
                 ", name='" + name + '\'' +
                 ", age=" + age + '\'' +
                 '}';
