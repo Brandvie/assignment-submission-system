@@ -14,7 +14,7 @@ public class JdbcUserDao implements UserDao {
 
         List<User> users = new ArrayList<>();
 
-        String sql = "SELECT * FROM students";
+        String sql = "SELECT * FROM users";
 
         try(Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);

@@ -58,13 +58,15 @@ public class main {
         }
 
 
+
         private static void listAllUsers() {
             System.out.println("\nAll Users:");
             List<User> users = userDao.getAllUsers();
             for (User user : users) {
-                System.out.println(user);
+                System.out.println(users);
             }
         }
+
 
         private static void findUsersById() {
             System.out.print("\nEnter user ID to find: ");
