@@ -20,4 +20,7 @@ public class UserService {
     public User getStudentById(int id) {
         return userDao.getUserById(id);
     }
+    public boolean deleteUserById(int id) {
+        return userDao.deleteUserById(id);
+    }
 }

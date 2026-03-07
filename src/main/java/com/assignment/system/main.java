@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.assignment.system.dao.UserDao;
 import com.assignment.system.dao.jdbc.JdbcUserDao;
 import com.assignment.system.dto.User;
+import com.assignment.system.service.UserService;
 
 public class main {
 
@@ -81,5 +82,20 @@ public class main {
             }
 
         }
+    private static void deleteUser(UserService service, Scanner scanner) {
+
+        System.out.print("Enter User ID to delete: ");
+        int id = scanner.nextInt();
+
+        boolean deleted = service.deleteUserById(id);
+
+        if (deleted) {
+            System.out.println("User deleted successfully.");
+        } else {
+            System.out.println("User not found.");
+        }
+    }
+
+
     }
 
